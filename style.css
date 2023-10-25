@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  width: 350px;
+  margin-inline: auto;
+  margin-top: 50px;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  text-align: center;
+}
+#input {
+  grid-column: span 3;
+}
+.info {
+  display: none;
+}
+
+.buttons {
+  padding: 20px;
+  border: 1px solid grey;
+  color: white;
+  background-color: black;
+  cursor: pointer;
+}
+.buttons:active {
+  background-color: rgba(0, 0, 0, 0.021);
+}
+.ac {
+  background-color: teal;
+}
+.opp {
+  background-color: grey;
+}
