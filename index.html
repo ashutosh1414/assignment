@@ -3,33 +3,84 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Calculator</title>
+    <title>Document</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="container">
-      <div class="grid-container">
-        <input type="text" name="" id="input" />
-        <div class="buttons ac" onclick="clearInput()">AC</div>
-        <div class="buttons" onclick="appendToInput('9')">9</div>
-        <div class="buttons" onclick="appendToInput('8')">8</div>
-        <div class="buttons" onclick="appendToInput('7')">7</div>
-        <div class="buttons opp" onclick="appendToInput('+')">+</div>
-        <div class="buttons" onclick="appendToInput('4')">4</div>
-        <div class="buttons" onclick="appendToInput('5')">5</div>
-        <div class="buttons" onclick="appendToInput('6')">6</div>
-        <div class="buttons opp" onclick="appendToInput('-')">-</div>
-        <div class="buttons" onclick="appendToInput('1')">1</div>
-        <div class="buttons" onclick="appendToInput('2')">2</div>
-        <div class="buttons" onclick="appendToInput('3')">3</div>
-        <div class="buttons opp" onclick="appendToInput('/')">/</div>
-        <div class="buttons" onclick="appendToInput('.')">.</div>
-        <div class="buttons" onclick="appendToInput('0')">0</div>
-        <div class="buttons eq" id="equal" onclick="calculate()">=</div>
-        <div class="buttons opp" onclick="appendToInput('*')">*</div>
+    <form class="container">
+      <div class="box">
+        <div class="subhead">
+          <div>
+            <p>First name</p>
+            <input type="text" id="Firstname" placeholder="First name" />
+          </div>
+
+          <div>
+            <p>Last name</p>
+            <input type="text" id="Lastname" placeholder="Last name"/>
+          </div>
+        </div>
+
+        <div class="subhead">
+          <div>
+            <p for="emails">Email</p>
+            <input
+              type="email"
+              name="email"
+              id="Emails"
+              placeholder=" Enter Email"
+            />
+          </div>
+
+          <div>
+            <p for="Phonenum">Mobile number</p>
+            <input type="number" id="Phonenum" placeholder="Mobile Number"  />
+          </div>
+        </div>
+
+        <div class="subhead">
+          <div>
+            <p for="Profession">Profession</p>
+            <input type="text" id="Profession" placeholder="Enter Profession" />
+          </div>
+          <div>
+            <p for="dob">Date of birth</p>
+            <input type="date" name="date" id="dob" />
+          </div>
+        </div>
+
+        <div class="subhead">
+          <div>
+            <select name="SelectCountry" id="Country" >
+              <option value="">Select Country</option>
+              <option value="India">India</option>
+              <option value="Pakistan">Pakistan</option>
+              <option value="Srilanka">Sri lanka</option>
+              <option value="England">England</option>
+              <option value="Australia">Australia</option>
+            </select>
+          </div>
+          <div class="radiobtn">
+            <p>Select gender</p>
+            <label for="male">Male</label>
+            <input type="radio" name="gender" id="male" />
+
+            <label for="female">female</label>
+            <input type="radio" name="gender" id="female" />
+          </div>
+        </div>
+        <div class="btn">
+          <button class="sbt">Submit</button>
+          <button class="reset">Reset</button>
+        </div>
+      </div>
+    </form>
+    <div class="popup">
+        <p id="cross">X</p>
+      <div class="popup-cont">
+       
       </div>
     </div>
-
     <script src="script.js"></script>
   </body>
 </html>

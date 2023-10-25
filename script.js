@@ -1,30 +1,54 @@
-document.addEventListener("keydown", (e) => {
-  if (e.key === "Backspace") {
-    const inputField = document.getElementById("input");
-    const inputValue = inputField.value;
-    inputField.value = inputValue.slice(0,-1);
+let inputfield = document.getElementsByTagName("input");
+let submitbtn = document.getElementsByClassName("sbt");
+let resetbtn = document.getElementsByClassName("reset");
+let container = document.getElementsByClassName("container");
+const popup = document.getElementsByClassName("popup");
+const cross = document.getElementById("cross");
+const popupinsider = document.getElementsByClassName("popup-cont");
+const dropdown = document.getElementById("Country");
+
+console.log(inputfield);
+let data = {};
+for (let i = 0; i < inputfield.length; i++) {
+  inputfield[i].addEventListener("change", (e) => {
+    e.preventDefault();
+    const { id, value } = e.target;
+    data = { ...data, [id]: value };
+    inputfield[i].name = value;
+    console.log(data);
+  });
+}
+submitbtn[0].addEventListener("click", (e) => {
+ e.preventDefault();
+
+  for (const key in data) {
+    const para = document.createElement("p");
+    popupinsider[0].append(para);
+    if (key === "male" || key === "female") {
+      para.innerText = `${key} = ${key}`;
+    } else {
+      para.innerText = `${key} = ${data[key]}`;
+    }
   }
+  container[0].style.display = "none";
+  popup[0].style.display = "block";
 });
-document.addEventListener("keypress", (e) => {
 
-  if (e.key === "Enter") {
-    calculate();
-  }
+cross.addEventListener("click", (e) => {
+  e.preventDefault();
+  container[0].style.display = "block";
+  popup[0].style.display = "none";
 });
-function appendToInput(value) {
-  document.getElementById("input").value += value;
-}
-
-function clearInput() {
-  document.getElementById("input").value = "";
-}
-
-function calculate() {
-  const input = document.getElementById("input").value;
-  try {
-    const result = eval(input);
-    document.getElementById("input").value = result;
-  } catch (error) {
-    document.getElementById("input").value = "Error";
+resetbtn[0].addEventListener("click", (e) => {
+  data = {};
+  for (let i = 0; i < inputfield.length; i++) {
+    e.target.name = " ";
   }
-}
+  dropdown.value = " ";
+});
+
+dropdown.addEventListener("change", (e) => {
+  const { id, value } = e.target;
+  data = { ...data, [id]: value };
+  e.target.name = e.target.value;
+});

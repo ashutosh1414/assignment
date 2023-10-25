@@ -1,38 +1,58 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
 }
 .container {
-  width: 350px;
   margin-inline: auto;
-  margin-top: 50px;
+  width: fit-content;
+  border: 2px solid grey;
+  padding: 20px;
 }
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  text-align: center;
+#Country{
+    width: 164px;
+    padding: 5px;
 }
-#input {
-  grid-column: span 3;
+.btn {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top:15px ;
 }
-.info {
+button {
+  background-color: blue;
+  padding: 10px 20px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  color: white;
+}
+.popup {
+  margin: 15px;
+  padding: 10px;
   display: none;
+  cursor: pointer;
+  margin-inline: auto;
+  border: 3px solid teal;
+  width: fit-content;
+  border-radius: 4px;
+}
+input{
+    padding: 5px;
 }
 
-.buttons {
-  padding: 20px;
-  border: 1px solid grey;
-  color: white;
-  background-color: black;
-  cursor: pointer;
+#cross {
+  text-align: end;
+  margin-top: -10px;
 }
-.buttons:active {
-  background-color: rgba(0, 0, 0, 0.021);
+.reset {
+  background-color: red;
 }
-.ac {
-  background-color: teal;
+button:active {
+  color: teal;
+  background-color: aquamarine;
 }
-.opp {
-  background-color: grey;
+.subhead {
+  display: flex;
+  gap: 120px;
+  margin-top: 20px;
 }
